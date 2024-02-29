@@ -1,44 +1,25 @@
 import * as React from "react"
 import {
-    AlertCircle,
-    Archive,
-    ArchiveX, Calendar,
-    File, Home,
-    Inbox, MessageSquarePlus,
-    MessagesSquare,
-    PenBox,
-    Search,
-    Send,
-    ShoppingCart,
-    Trash2,
-    Users2,
-    Link2
+     Calendar,
+     Home,
+     MessageSquarePlus,
+    Link2, PencilRuler, SquarePen
 } from "lucide-react"
 import {Nav} from "./Nav";
 import { cn } from "./utils/cn"
 import { Separator } from "./Separator"
-import { Input } from "./Input"
-import {
-    Tabs,
-    TabsContent,
-    TabsList,
-    TabsTrigger,
-} from "./Tabs"
 import { TooltipProvider } from "./Tooltip"
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "./Resizable"
 import logo from './assets/logo.png'
-import {useEffect, useRef} from "react";
-import {ImperativePanelHandle} from "react-resizable-panels";
+
 
 const MailTest = () => {
-
-
     const [isCollapsed, setIsCollapsed] = React.useState(false)
     console.log(isCollapsed)
 
     return (
         <ResizablePanelGroup direction="horizontal" className="h-full items-stretch">
-            <ResizablePanel  minSize={5} maxSize={20} style={{minWidth: '70px'}}
+            <ResizablePanel minSize={7}  style={{minWidth: '70px', maxWidth: '270px'}}
                              collapsible={true}  onCollapse={(collapsed) => {
                 console.log('onCollapse called with:', isCollapsed);
                 setIsCollapsed(true);
@@ -56,7 +37,7 @@ const MailTest = () => {
                         isCollapsed={isCollapsed}
                          links={[
                              {
-                                 title: isCollapsed ? "" : "Dashboard",
+                                 title:  "Dashboard",
                                  label: "",
                                  icon: Home,
                                  variant: "default",
@@ -88,14 +69,15 @@ const MailTest = () => {
                              {
                                  title: "Creation de page Web",
                                  label: "",
-                                 icon: Home,
+                                 icon: PencilRuler,
                                  variant: "ghost",
                              },
                              {
                                  title: "Créer un article ",
                                  label: "",
-                                 icon: Calendar,
+                                 icon: SquarePen,
                                  variant: "ghost",
+
                              },
 
 

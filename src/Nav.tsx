@@ -39,7 +39,7 @@ export function Nav({ links, isCollapsed}: NavProps) {
                                             buttonVariants({variant: link.variant, size: "icon"}),
                                             "h-9 w-9 text-white",
                                             link.variant === "default" &&
-                                            "dark:bg-muted dark:text-muted-foreground dark:hover:bg-muted dark:hover:text-white"
+                                            "dark:bg-muted dark:text-muted-foreground dark:hover:bg-muted dark:hover:text-white bg-gray-600"
                                         )}
                                     >
                                         <link.icon className="h-4 w-4"/>
@@ -63,7 +63,7 @@ export function Nav({ links, isCollapsed}: NavProps) {
                                     buttonVariants({variant: link.variant, size: "sm"}),
                                     "text-white",
                                     link.variant === "default" &&
-                                    "dark:bg-muted dark:text-white dark:hover:bg-muted dark:hover:text-white",
+                                    " dark:bg-muted dark:text-white dark:hover:bg-muted dark:hover:text-white bg-gray-600",
                                     "justify-start"
                                 )}
                             >
