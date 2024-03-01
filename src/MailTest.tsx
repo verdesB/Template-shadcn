@@ -12,6 +12,7 @@ import { TooltipProvider } from "./Tooltip"
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "./Resizable"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import logo from './assets/logo.png'
+import any = jasmine.any;
 
 
 const MailTest = () => {
@@ -21,10 +22,10 @@ const MailTest = () => {
     return (
         <ResizablePanelGroup direction="horizontal" className="h-full items-stretch">
             <ResizablePanel minSize={7}  style={{minWidth: '70px', maxWidth: '270px'}}
-                             collapsible={true}  onCollapse={(collapsed: boolean) => {
+                             collapsible={true}  onCollapse={(collapsed: boolean): any => {
                 console.log('onCollapse called with:', isCollapsed);
                 setIsCollapsed(true);
-                return undefined;
+
             }} onExpand={() => {
                 console.log('onExpand called');
                 setIsCollapsed(false);
