@@ -24,6 +24,7 @@ const MailTest = () => {
                              collapsible={true}  onCollapse={(collapsed: boolean) => {
                 console.log('onCollapse called with:', isCollapsed);
                 setIsCollapsed(true);
+                return undefined;
             }} onExpand={() => {
                 console.log('onExpand called');
                 setIsCollapsed(false);
