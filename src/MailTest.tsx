@@ -12,6 +12,7 @@ import { TooltipProvider } from "./Tooltip"
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "./Resizable"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import logo from './assets/logo.png'
+import {PanelOnCollapse} from "react-resizable-panel";
 
 
 
@@ -21,15 +22,22 @@ const MailTest = () => {
 
     return (
         <ResizablePanelGroup direction="horizontal" className="h-full items-stretch">
-            <ResizablePanel minSize={7}  style={{minWidth: '70px', maxWidth: '270px'}}
-                             collapsible={true}  onCollapse={(collapsed: boolean): any => {
-                console.log('onCollapse called with:', isCollapsed);
-                setIsCollapsed(true);
+            {/*<ResizablePanel minSize={7}  style={{minWidth: '70px', maxWidth: '270px'}}*/}
+            {/*                 collapsible={true}  onCollapse={(collapsed: boolean): any => {*/}
+            {/*    console.log('onCollapse called with:', isCollapsed);*/}
+            {/*    setIsCollapsed(true);*/}
 
-            }} onExpand={() => {
-                console.log('onExpand called');
-                setIsCollapsed(false);
-            }}>
+
+            {/*}} onExpand={() => {*/}
+            {/*    console.log('onExpand called');*/}
+            {/*    setIsCollapsed(false);*/}
+            {/*}}>*/}
+                <ResizablePanel minSize={7}  style={{minWidth: '70px', maxWidth: '270px'}}
+                                collapsible={true}  onCollapse={((collapsed: boolean) => {
+                    console.log('onCollapse called with:', isCollapsed);
+                    setIsCollapsed(true);
+                }) as PanelOnCollapse}
+                >
                 <TooltipProvider delayDuration={0}>
                 <div style={{backgroundColor: '#1b202c'}} className={cn("flex h-[52px] items-center justify-center", isCollapsed ? 'h-[52px]' : 'px-2')}>
                    <img src={logo} style={{objectFit: 'cover',height: '100%'}}/>
