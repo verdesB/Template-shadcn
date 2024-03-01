@@ -40,7 +40,7 @@ const MailTest = () => {
                                 collapsible={true}  onCollapse={((collapsed: boolean) => {
                     console.log('onCollapse called with:', isCollapsed);
                     setIsCollapsed(true);
-                }) as PanelOnCollapse}
+                }) as any}
                 >
                 <TooltipProvider delayDuration={0}>
                 <div style={{backgroundColor: '#1b202c'}} className={cn("flex h-[52px] items-center justify-center", isCollapsed ? 'h-[52px]' : 'px-2')}>
