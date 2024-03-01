@@ -1,7 +1,7 @@
 import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
-import {Mail} from "./Mail";
+
 import MailTest from "./MailTest";
 // import Cookies from "js-cookie";
 
