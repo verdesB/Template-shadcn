@@ -16,6 +16,7 @@ import {PanelOnCollapse} from "react-resizable-panel";
 
 
 
+
 const MailTest = () => {
     const [isCollapsed, setIsCollapsed] = React.useState(false)
     console.log(isCollapsed)
@@ -33,6 +34,9 @@ const MailTest = () => {
             {/*    setIsCollapsed(false);*/}
             {/*}}>*/}
                 <ResizablePanel minSize={7}  style={{minWidth: '70px', maxWidth: '270px'}}
+                                onExpand={() => {
+                                    setIsCollapsed(false)
+                                }}
                                 collapsible={true}  onCollapse={((collapsed: boolean) => {
                     console.log('onCollapse called with:', isCollapsed);
                     setIsCollapsed(true);
